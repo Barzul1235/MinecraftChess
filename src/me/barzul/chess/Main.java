@@ -6,6 +6,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        this.getLogger().info("-> Chess-Plugin enabled!");
+        this.getLogger().info("[MC-Chess] -> Plugin enabled!");
     }
+
 }
