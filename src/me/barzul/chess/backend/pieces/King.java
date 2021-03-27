@@ -1,15 +1,22 @@
 package me.barzul.chess.backend.pieces;
 
+import me.barzul.chess.backend.Game;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class King extends Piece {
 
+    public King(int x, int y, boolean colour, Game game) {
+        this.x = x;
+        this.y = y;
+        this.colour = colour;
+        this.game = game;
+    }
+
     @Override
     public boolean isMovePossible(int[] destinationCoords) {
-
         return getPossibleMoves().contains(destinationCoords);
-
     }
 
     @Override
@@ -25,8 +32,8 @@ public class King extends Piece {
             tempX += offset[0];
             tempY += offset[1];
             if (game.isInField(new int[]{tempX, tempY}) && !game.canBeAttacked(new int[]{tempX, tempY}, !colour)) {
+                if(game.isFieldSave(new int[]{tempX, tempY}, colour))
                 moves.add(new int[]{tempX, tempY});
-
             }
         }
 

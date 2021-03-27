@@ -1,15 +1,22 @@
 package me.barzul.chess.backend.pieces;
 
+import me.barzul.chess.backend.Game;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Queen extends Piece {
 
+    public Queen(int x, int y, boolean colour, Game game) {
+        this.x = x;
+        this.y = y;
+        this.colour = colour;
+        this.game = game;
+    }
+
     @Override
     public boolean isMovePossible(int[] destinationCoords) {
-
         return getPossibleMoves().contains(destinationCoords);
-
     }
 
     @Override
