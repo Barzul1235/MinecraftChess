@@ -13,7 +13,6 @@ public class King extends Piece {
         this.x = x;
         this.y = y;
         this.colour = colour;
-        this.game = game;
     }
 
     @Override

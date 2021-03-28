@@ -15,8 +15,6 @@ public abstract class Piece {
     public int x = 1;
     public int y = 1;
 
-    public Game game = new Game();
-
 
     public abstract boolean isMovePossible(int[] destinationCoords);
     public abstract List<int[]> getPossibleMoves();
