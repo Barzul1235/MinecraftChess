@@ -7,6 +7,8 @@ import java.util.List;
 
 public class King extends Piece {
 
+    public boolean hasMovedBefore = false;
+
     public King(int x, int y, boolean colour, Game game) {
         this.x = x;
         this.y = y;
@@ -45,6 +47,7 @@ public class King extends Piece {
         if(isMovePossible(new int[]{x, y})) {
             this.x = x;
             this.y = y;
+            hasMovedBefore = false;
             return true;
         }
         return false;

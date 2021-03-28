@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Rook extends Piece {
 
+    public boolean hasMovedBefore = false;
+
     public Rook(int x, int y, boolean colour, Game game) {
         this.x = x;
         this.y = y;
@@ -50,6 +52,7 @@ public class Rook extends Piece {
         if(isMovePossible(new int[]{x, y})) {
             this.x = x;
             this.y = y;
+            hasMovedBefore = true;
             return true;
         }
         return false;
